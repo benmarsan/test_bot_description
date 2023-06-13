@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="mesh3" params="prefix">
+        <link name="mesh3_link">
+            <visual>
+                <geometry>
+                    <mesh filename="${mesh3_file}" scale="0.001 0.001 0.001" />
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="mesh3_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="mesh3_link"/>
+            <origin xyz="0 -1 0" rpy="0 0 0"/>
+        </joint>
+    </xacro:macro>
+</robot>
